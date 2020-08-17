@@ -1,7 +1,7 @@
 import axios from 'axios'
-import Location from './api/types/Location'
-import Measurement from './api/types/Measurement'
-import Pollen from './api/types/Pollen'
+import { Location } from './api/types/Location'
+import { Measurement } from './api/types/Measurement'
+import { Pollen } from './api/types/Pollen'
 
 export class EpinApi {
   private static readonly baseUrl: string = 'https://epin.lgl.bayern.de/api'
@@ -40,10 +40,14 @@ export class EpinApi {
       axios
         .get(query)
         .then((res) => {
-          const measurements: Measurement[] = res.data.measurements[0].data.map(
-            (el) => new Measurement(el.from, el.to, el.value)
-          )
-          resolve(measurements)
+          if (res.data.measurements.length === 0) {
+            resolve([])
+          } else {
+            const measurements: Measurement[] = res.data.measurements[0].data
+              .map((el) => new Measurement(el.from, el.to, el.value))
+              .sort((el) => el.from)
+            resolve(measurements)
+          }
         })
         .catch((err) => {
           reject(err)

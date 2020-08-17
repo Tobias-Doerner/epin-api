@@ -1,4 +1,4 @@
-export default class Measurement {
+export class Measurement {
   private from: number
 
   private to: number

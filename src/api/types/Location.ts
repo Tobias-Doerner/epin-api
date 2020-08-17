@@ -1,13 +1,13 @@
-export default class Location {
-  private id: number
+export class Location {
+  public readonly id: number
 
-  private name: string
+  public readonly name: string
 
-  private network: string
+  public readonly network: string
 
-  private longitude: number
+  public readonly longitude: number
 
-  private latitude: number
+  public readonly latitude: number
 
   constructor(
     id: number,

@@ -1,5 +1,5 @@
-export default class Pollen {
-  private name: string
+export class Pollen {
+  public name: string
 
   constructor(name: string) {
     this.name = name
