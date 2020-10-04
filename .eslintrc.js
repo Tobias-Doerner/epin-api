@@ -9,5 +9,6 @@ module.exports = {
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended'
   ],
-  rules: {}
+  rules: {},
+  ignorePatterns: ['node_modules/**', 'dist/**', 'src/api/**']
 }
