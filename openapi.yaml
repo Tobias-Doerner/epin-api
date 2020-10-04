@@ -48,17 +48,17 @@ paths:
         schema:
           type: number
       - in: query
-        style: form
         name: locations
-        explode: true
+        style: form
+        explode: false
         schema:
           type: array
           items:
             type: string
       - in: query
-        style: form
         name: pollen
-        explode: true
+        style: form
+        explode: false
         schema:
           type: array
           items:
