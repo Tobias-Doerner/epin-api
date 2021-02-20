@@ -1,31 +1,24 @@
 {
   "name": "epin-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Api for querying the ePIN (elektronisches Polleninformationsnetzwerk) service.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "npm run build",
     "build": "npm run generate && tsc",
-    "generate": "npx @openapitools/openapi-generator-cli generate -i ./openapi.yaml -g typescript-axios -o src/api",
-    "lint": "eslint --ext .js,.ts --ignore-path. .gitignore ."
+    "generate": "npx @openapitools/openapi-generator-cli generate -i ./openapi.yaml -g typescript-axios -o src/generated"
   },
   "keywords": [],
   "author": "Tobias Dörner <tobias.doerner.com@mailbox.org> (https://github.com/Tobias-Doerner)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tobias-Doerner/epin-api.git"
+  },
   "devDependencies": {
-    "@openapitools/openapi-generator-cli": "2.1.7",
-    "@types/jest": "^26.0.15",
-    "@typescript-eslint/eslint-plugin": "^4.8.2",
-    "@typescript-eslint/parser": "^4.8.2",
-    "axios": "^0.21.0",
-    "eslint": "^7.14.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "jest": "^26.6.3",
-    "prettier": "^2.2.1",
-    "ts-jest": "^26.4.4",
-    "tsc-watch": "^4.2.9",
-    "typescript": "^4.1.2"
+    "@openapitools/openapi-generator-cli": "2.1.23",
+    "axios": "^0.21.1",
+    "typescript": "^4.1.5"
   }
 }
